@@ -14,6 +14,7 @@ namespace FutureYield
         {
             ModuleManager.Module module = new ModuleManager.Module("FutureYield");
             module.Register("ServerHop", new Button(ServerHop));
+            module.Register("LoudMic", new ConVar<bool>(state => USpeaker.field_Internal_Static_Single_1 = state ? float.MaxValue : 1));
         }
 
         public static void ServerHop()
