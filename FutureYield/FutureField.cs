@@ -1,22 +1,15 @@
 ﻿using Astrum.AstralCore;
-using Astrum.AstralCore.Managers;
+using Astrum.AstralCore.UI.Attributes;
 using MelonLoader;
-using static Astrum.AstralCore.Managers.CommandManager;
 
-[assembly: MelonInfo(typeof(FutureYield.FutureYield), nameof(FutureYield.FutureYield), "0.1.0", downloadLink: "github.com/xMiraiChan/FutureYield")]
+[assembly: MelonInfo(typeof(FutureYield.FutureYield), nameof(FutureYield.FutureYield), "0.2.0", downloadLink: "github.com/xMiraiChan/FutureYield")]
 [assembly: MelonGame("VRChat", "VRChat")]
 
 namespace FutureYield
 {
     public class FutureYield : MelonMod
     {
-        static FutureYield()
-        {
-            ModuleManager.Module module = new ModuleManager.Module("FutureYield");
-            module.Register("ServerHop", new Button(ServerHop));
-            module.Register("LoudMic", new ConVar<bool>(state => USpeaker.field_Internal_Static_Single_1 = state ? float.MaxValue : 1));
-        }
-
+        [UIButton("FutureYield", "ServerHop")]
         public static void ServerHop()
         {
             Il2CppSystem.Collections.Generic.List<VRC.Core.ApiWorldInstance> instances = 
@@ -25,6 +18,14 @@ namespace FutureYield
             if (instances.Count == 0)
                 Logger.Notif("There are no viable instances to hop to");
             VRC.SDKBase.Networking.GoToRoom(instances[UnityEngine.Random.Range(0, instances.Count - 1)].id);
+        }
+
+        private static bool loudMic = false;
+        [UIProperty<bool>("FutureYield", "LoudMic")]
+        public static bool LoudMic
+        {
+            get => loudMic;
+            set => USpeaker.field_Internal_Static_Single_1 = (loudMic = value) ? float.MaxValue : 1;
         }
     }
 }

@@ -10,6 +10,7 @@
     <RootNamespace>FutureYield</RootNamespace>
     <AssemblyName>FutureYield</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>preview</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -39,6 +40,9 @@
     </Reference>
     <Reference Include="AstralCore">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\AstralCore.dll</HintPath>
+    </Reference>
+    <Reference Include="AstralCore.UI">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\AstralCore.UI.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
