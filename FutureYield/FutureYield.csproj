@@ -47,12 +47,14 @@
     <Reference Include="Il2Cppmscorlib">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
     </Reference>
+    <Reference Include="Il2CppSystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="MelonLoader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\MelonLoader.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="UnhollowerBaseLib">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
     </Reference>
@@ -68,6 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FutureField.cs" />
+    <Compile Include="Modules\Crash.cs" />
+    <Compile Include="Modules\Misc.cs" />
+    <Compile Include="SDK.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
